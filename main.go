@@ -1,21 +1,17 @@
 package main
 
 import (
-	"engine/engine"
+	"excharge/engine"
 	"log"
-
 	"github.com/Shopify/sarama"
 	cluster "github.com/bsm/sarama-cluster"
 )
 
 func main() {
-
 	// create the consumer and listen for new order messages
 	consumer := createConsumer()
-
 	// create the producer of trade messages
 	producer := createProducer()
-
 	// create the order book
 	book := engine.OrderBook{
 		BuyOrders:  make([]engine.Order, 0, 100),
