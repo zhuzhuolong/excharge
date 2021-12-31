@@ -169,19 +169,18 @@ func Allocator(maxSize int, classes []Class) (alloc func(int) []byte, free func(
 /* 
 func Allocator_test() {
 	alloc, free := Allocator(
-		4096, /*
-		   最大分配大小
-		*/
+		4096, 
+		   //最大分配大小
+		
 		[]Class{
 			{4096, 512},
 			{2048, 512},
 			{1024, 512},
 			{512, 512},
 			{128, 512},
-		}, /*
-		   class 的大小和容量需要根据具体的负载来决定
-		   需要按大小降序排列
-		*/
+		}, 
+		  // class 的大小和容量需要根据具体的负载来决定需要按大小降序排列
+		
 	)
 
 	n := int(1e5)
